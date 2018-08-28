@@ -13,7 +13,7 @@ for r,d,f in os.walk('//licmp072n8p0043/d$/Solr Logs'): # Reading Log location
             with open(loc,encoding='utf8') as corefile:
                 lines = corefile.readlines()
                 for line in lines:
-                    if line.find("core.SolrCore - [JobPostings]") > 0 and line.find("start=0") > 0:
+                    if line.find("core.SolrCore - [JobPostings]") > 0 and line.find("start=0") > 0: #Change this to your collection name
                         m = re.search('(?<=&q=)[0-9a-zA-Z_+]+',line)
                         if m and m.group(0):
                             searchterm = m.group(0).replace('+',' ').lower() # replace '+' with ' ' and converting to lower
